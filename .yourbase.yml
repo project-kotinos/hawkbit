@@ -1,0 +1,16 @@
+build_targets:
+- commands:
+  - mvn install --batch-mode -DskipTests
+  - ./.circleci/run-qa.sh
+  container:
+    image: yourbase/yb_ubuntu:18.04
+  name: default
+
+ci:
+  builds:
+  - build_target: default
+    name: default
+dependencies:
+  build:
+  - java:11.0.6
+  - maven:3.6.3
