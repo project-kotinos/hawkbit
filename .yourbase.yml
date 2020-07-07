@@ -1,7 +1,7 @@
 build_targets:
 - commands:
   - mvn install --batch-mode -DskipTests
-  - ./.circleci/run-qa.sh
+  - './.circleci/run-qa.sh'
   container:
     image: yourbase/yb_ubuntu:18.04
   name: default
